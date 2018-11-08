@@ -1,0 +1,17 @@
+
+1. Copy jquery.progressbar.css in the css folder
+2. Copy the jquery.progressbar.min.js file in the js folder
+3. Change the containing DOMElement if required.
+
+
+<div id="main_image_container" class="main_image_container">
+	<img id="bg_smooth" src=""/>
+	<span id="progress_bar"></span>
+	<div class="controls">
+		<div class="play"></div>
+		<div id="slider" class="slider"></div>
+	</div>
+	<div id="asx_rotator_logo">
+		<img src="images/asx_360.png">
+	</div>
+</div>
