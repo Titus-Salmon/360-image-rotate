@@ -18,7 +18,10 @@
 				yourDirectory: "images/A_STATION_2tone",
 				transition_speed: 110,
 				images: [{
-					name: "A_360_23.jpg" //only need to have one of the images in yourDirectory listed in this images object/array, since the change_image function in jquery.rotate360.js essentially automatically scrolls through all image files sequentially in yourDirectory. Thus, if only A_360_23.jpg is contained in this images object/array, and there are images A_360_01 through A_360_36 contained in yourDirectory, the change_image function will start with A_360_23.jpg, and then proceed through 24, 25, 26...36, and back through 01, 02...22, until all images are loaded
+					name: "A_360_23.jpg" //only need to have one of the images in yourDirectory listed in this images object/array, since the change_image function in jquery.rotate360.js essentially automatically scrolls through all image files sequentially in yourDirectory. Thus:
+
+					//'function preload_image()' (in 'jquery.rotate360.js') loads the image(s) in this 'images' array/object (i.e. A_360_23.jpg)
+					//then 'function change_image(number)' (in 'jquery.rotate360.js') starts from the beginning image in yourDirectory (i.e. A_360_01.jpg), converting everything to lowercase (i.e. a_360_01.jpg). Then, as you move the slider to the right, 'function change_image(number)' loads & displays each successive image (i.e. a_360_02.jpg, a_360_03.jpg...a_360_36.jpg), resulting in the appearance of a 360deg rotation
 				}]
 			}
 			$("#main_image_container").rotate360(options);
