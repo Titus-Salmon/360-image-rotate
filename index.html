@@ -1,49 +1,26 @@
 <html>
+  <head>
+    <link rel="stylesheet" href="jquery_ui/jquery-ui-1.12.1.custom/jquery-ui.css">
+    <link rel="stylesheet" href="css/rotate360.css">
 
-<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="jquery_ui/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="js/jquery.rotate360.js"></script>
 
-	<link rel="stylesheet" href="jquery_ui/jquery-ui-1.12.1.custom/jquery-ui.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" language="javascript">
+      $(document).ready(function() {
+        $("#main_image_container").rotate360();
+      });
+    </script>
+  </head>
 
-	<link rel="stylesheet" href="css/rotate360.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	<!--<link rel="stylesheet" href="css/jquery.slider.css" type="text/css" media="screen" title="no title" charset="utf-8">-->
-	<!--<link rel="stylesheet" href="css/jquery.progressbar.css" type="text/css" media="screen" title="no title" charset="utf-8">-->
-
-	<!--<script src="js/jquery-1.5.js" type="text/javascript" charset="utf-8"></script>-->
-	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-	<script src="js/jquery.rotate360.js" type="text/javascript" charset="utf-8"></script>
-	<!--<script src="js/jquery.slider.js" type="text/javascript" charset="utf-8"></script>-->
-	<!--<script src="js/jquery.progressbar.min.js" type="text/javascript" charset="utf-8"></script>-->
-	<script src="jquery_ui/jquery-ui-1.12.1.custom/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
-
-	<script type="text/javascript" language="javascript">
-		$(function () {
-
-			var options = {
-				yourDirectory: "images/A_STATION_2tone",
-				transition_speed: 110,
-				images: [{
-					name: "A_360_23.jpg" //only need to have one of the images in yourDirectory listed in this images object/array, since the change_image function in jquery.rotate360.js essentially automatically scrolls through all image files sequentially in yourDirectory. Thus:
-
-					//'function preload_image()' (in 'jquery.rotate360.js') loads the image(s) in this 'images' array/object (i.e. A_360_23.jpg)
-					//then 'function change_image(number)' (in 'jquery.rotate360.js') starts from the beginning image in yourDirectory (i.e. A_360_01.jpg), converting everything to lowercase (i.e. a_360_01.jpg). Then, as you move the slider to the right, 'function change_image(number)' loads & displays each successive image (i.e. a_360_02.jpg, a_360_03.jpg...a_360_36.jpg), resulting in the appearance of a 360deg rotation
-				}]
-			}
-			$("#main_image_container").rotate360(options);
-		})
-	</script>
-
-
-</head>
-
-<body>
-	<div id="main_image_container" class="main_image_container">
-		<img id="bg_smooth" src="" />
-		<span id="progress_bar"></span>
-		<div class="controls">
-			<div class="play"></div>
-			<div id="slider" class="slider"></div>
-		</div>
-	</div>
-</body>
-
+  <body>
+    <div id="main_image_container" class="main_image_container">
+      <img id="bg_smooth" src="" /> <span id="progress_bar"></span>
+      <div class="controls">
+        <div id="slider" class="slider"></div>
+        <button class="play_btn"></button> <button class="pause_btn"></button>
+      </div>
+    </div>
+  </body>
 </html>

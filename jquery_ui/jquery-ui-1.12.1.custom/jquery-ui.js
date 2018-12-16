@@ -13442,9 +13442,14 @@ var widgetsSelectmenu = $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 //>>css.structure: ../../themes/base/slider.css
 //>>css.theme: ../../themes/base/theme.css
 
+/**BEGIN .slider() method notes_t0d*********************************************************************** */
+//	$.widget is a defined function in this file (see above), that takes the following arguments:
+//	$.widget = function(name, base, prototype) {.....}
+//	thus, in the code below, "ui.slider" = name, $.ui.mouse = base, & the prototype is the very large
+//	object between the {}
+/**END .slider() method notes_t0d*********************************************************************** */
 
-
-var widgetsSlider = $.widget( "ui.slider", $.ui.mouse, {
+var widgetsSlider = $.widget( "ui.slider", $.ui.mouse, { 
 	version: "1.12.1",
 	widgetEventPrefix: "slide",
 
@@ -14157,6 +14162,7 @@ var widgetsSlider = $.widget( "ui.slider", $.ui.mouse, {
 			}
 		}
 	}
+	
 } );
 
 
